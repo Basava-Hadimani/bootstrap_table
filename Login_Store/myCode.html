@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign up page</title>
+<link rel="stylesheet" href="styles.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body class="body">
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/en/0/05/Aricent_logo.jpg"/>
+</div>
+</div>
+</div>
+
+<div class="container" id="nav">
+<div class="row">
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+<a href="response.html"><button class="btn btn-success">Home</button></a>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+<a href="Detail.html"><button class="btn btn-success">Login</button></a>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+<a href="response.html"><button class="btn btn-success">Contact</button></a>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+<a href="response.html"><button class="btn btn-success">Career</button></a>
+</div>
+
+</div>
+</div>
+
+<div class="container" >
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<p> Name:</p>
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<input id="username" type="text" placeholder="Enter your name" autofocus required>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<p> Mail:</p>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<input type="email" name="email" id="mail" placeholder="Enter your email" required >
+</div>
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<p></p>
+</div>
+
+
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<input type="submit" class="btn btn-info" value="ADD" onclick="response()">
+</div>
+
+
+</div>
+</div>
+
+
+
+<script>
+function response(){
+
+
+	var name = document.getElementById("username").value;
+	var mail = document.getElementById("mail").value;
+
+		        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+				
+	var string = "user"+localStorage.clickcount;
+
+		
+	var me = {username:name, usermail:mail};
+
+
+	localStorage.setItem(string,JSON.stringify(me));
+	
+	
+	window.location.href = "store.html";
+
+}
+
+</script>
+
+</body>
+</html>

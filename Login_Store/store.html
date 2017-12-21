@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign up page</title>
+<link rel="stylesheet" href="styles.css">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+</head>
+<body class="body">
+
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+<img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/en/0/05/Aricent_logo.jpg"/>
+</div>
+</div>
+</div>
+
+<div class="Table" id="highscores">
+    <div class="Heading">
+        <div class="Cell">
+            <p>Number</p>
+        </div>
+        <div class="Cell">
+            <p>Name</p>
+        </div>
+        <div class="Cell">
+            <p>Mail</p>
+        </div>
+    </div>
+	
+</div>	
+
+
+<script>
+
+var index = 1;
+var hst = document.getElementById("highscores");
+
+	while(1){
+		
+		var string = "user"+index;
+		
+		if(localStorage.getItem(string)){
+		
+		var obj = localStorage.getItem(string);
+		console.log(obj);
+		
+		var retrievedObject = localStorage.getItem(string);
+
+		console.log('retrievedObject: ', JSON.parse(retrievedObject).username);
+		
+	
+	hst.innerHTML +=  "<div class=\"Row\">   <div class=\"Cell\">" + index+"</div> <div class=\"Cell\"> " + JSON.parse(retrievedObject).username + "</div><div class=\"Cell\">  " + JSON.parse(retrievedObject).usermail+ "</div>  </div>";
+	
+		index++;
+	
+	}else{
+		break;
+	}
+	
+	}
+
+</script>
+
+</body>
+</html>
